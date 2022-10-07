@@ -15,31 +15,29 @@ value.then(function(){
 	console.log("this is error");
 })
 */
-//promise all
-function  fun1(){
+//promise all 
+function  value1(){
 	return new Promise(function (resolve , reject){
-			console.log("fun1");
+      console.log("this is rejected");
 			reject();
 	})
 }
-function  fun2(){
+function  value2(){
 	return new Promise(function (resolve , reject){
-		setTimeout (function (){
-			console.log("fun2");
-			resolve();
-		},2000);
-	})
-}
-function  fun3(){
-	return new Promise(function (resolve , reject){
-			console.log("fun3");
+    console.log("this is resolved");
 			resolve();
 	})
 }
-Promise.all([fun1(),fun2(),fun3()])
+function  value3(){
+	return new Promise(function (resolve , reject){
+    console.log("this is resolved");
+			resolve();
+	})
+}
+Promise.all([value1(), value2(), value3()])
   .then(function(){
-    console.log("success");
+    console.log("this is success");
   })
   .catch(function(){
-    console.log("error");
+    console.log("this is error");
   })
